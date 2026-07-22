@@ -1,0 +1,24 @@
+# ==========================
+# MQTT EMQX CLOUD
+# ==========================
+
+MQTT_BROKER = "xxxxxxxxxx"
+MQTT_PORT = 8883
+
+MQTT_USERNAME = "xxxx"
+MQTT_PASSWORD = "xxxxxxxx"
+
+MQTT_TOPIC = "factory/panel01/telemetry"
+
+CLIENT_ID = "environment_subscriber"
+
+# ==========================
+# INFLUXDB
+# ==========================
+
+
+INFLUX_URL = "https://xxxxxxx"
+INFLUX_TOKEN = "xxxxxxxx"
+INFLUX_ORG = "Industrial"
+INFLUX_BUCKET = "panel_factory_data"
+MEASUREMENT = "panel_factory_data"

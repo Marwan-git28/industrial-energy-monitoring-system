@@ -1,0 +1,102 @@
+import json
+import ssl
+
+import paho.mqtt.client as mqtt
+
+from influxdb_client import InfluxDBClient, Point, WritePrecision
+
+from influxdb_client.client.write_api import SYNCHRONOUS
+
+from config import *
+
+
+# ===========================================
+# INFLUXDB
+# ===========================================
+
+influx_client = InfluxDBClient(
+    url="http://localhost:8086",
+    token="tKBGmQGtQk4H9xGbdbbktaBvzLqU2ae5tu7815zUTzH51OLtAh5kIjueFSdL75QQYcxkzYuPa1Y2tA12fEt5EQ==",
+    org="IndustrialMonitoring"
+)
+
+write_api = influx_client.write_api(write_options=SYNCHRONOUS)
+
+
+# ===========================================
+# MQTT CONNECT
+# ===========================================
+
+def on_connect(client, userdata, flags, reason_code, properties=None):
+
+    if reason_code == 0:
+
+        print("===================================")
+        print("MQTT CONNECTED")
+        print("Subscribe :", MQTT_TOPIC)
+        print("===================================")
+
+        client.subscribe(MQTT_TOPIC)
+
+    else:
+
+        print("MQTT Failed :", reason_code)
+
+# ===========================================
+# MQTT RECEIVE
+# ===========================================
+
+def on_message(client, userdata, msg):
+
+    payload = msg.payload.decode()
+
+    print()
+    print("========== MQTT DATA ==========")
+    print(payload)
+
+    data = json.loads(payload)
+
+    rpm = data["rpm"]
+    temp = data["temp"]
+    fuel = data["fuel"]
+
+    print("RPM  :", rpm)
+    print("TEMP :", temp)
+    print("FUEL :", fuel)
+
+    point = (
+        Point("vehicle_data")
+        .field("rpm", rpm)
+        .field("temp", temp)
+        .field("fuel", fuel)
+    )
+
+    write_api.write(
+        bucket="telematics",
+        org="IndustrialMonitoring",
+        record=point
+    )
+
+    print(">>> DATA SAVED TO INFLUXDB <<<")
+
+
+# ===========================================
+# MQTT CLIENT
+# ===========================================
+
+client = mqtt.Client(
+    mqtt.CallbackAPIVersion.VERSION2,
+    client_id=CLIENT_ID
+)
+
+client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)
+
+client.tls_set(cert_reqs=ssl.CERT_NONE)
+client.tls_insecure_set(True)
+
+client.on_connect = on_connect
+client.on_message = on_message
+
+client.connect(MQTT_BROKER, MQTT_PORT)
+
+client.loop_forever()
