@@ -158,7 +158,7 @@ The following videos demonstrate the complete Industrial Energy Monitoring Syste
 
 1. Industrial Energy Monitoring System – End-to-End Demonstration
 
-https://drive.google.com/your-video-link
+https://drive.google.com/file/d/10rg-_WG38JM3NPomLDMHN5dDMiNJsTe3/view?usp=drivesdk
 
 ---
 
@@ -166,7 +166,9 @@ https://drive.google.com/your-video-link
 
 2. Industrial Energy Monitoring System – Modbus RTU & REST API Demo
 
-https://drive.google.com/your-video-link
+https://drive.google.com/file/d/1Nye10JATb9Z6uk4P_x2Sgemz22344_IG/view?usp=drivesdk
+
+
 
 ## Future Improvements
 
@@ -178,8 +180,8 @@ https://drive.google.com/your-video-link
 
 ## Author
 
-Developed by Madi Sajah as part of a personal learning journey in Industrial IoT, Embedded Systems, and Industrial Automation.
+Developed by Marwan Saputra as part of a personal learning journey in Industrial IoT, Embedded Systems, and Industrial Automation.
 
-- GitHub: https://github.com/username
+- GitHub: https://github.com/Marwan-git28/industrial-energy-monitoring-system/edit/main/README.md
 - LinkedIn: https://linkedin.com/in/username
-- Email: your.email@example.com
+- Email: marwan.siputra@gmailcom
