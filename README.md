@@ -29,6 +29,8 @@ The system consists of two ESP32 devices communicating through Modbus RTU (RS485
 
 A Python Backend subscribes to the MQTT topics, processes the incoming data, stores it in InfluxDB Cloud, and provides REST API services using Flask. The collected data is visualized on a Grafana Dashboard, while ngrok exposes the REST API for external access during development and demonstration.
 
+![System](system-architecture.png)
+
 ## Hardware Components
 
 | Component | Description |
@@ -45,7 +47,7 @@ A Python Backend subscribes to the MQTT topics, processes the incoming data, sto
 
 #### PZEM-004T Energy Meter
 
-![Hardware setup](hardware_pzem-004t.png)
+![Hardware](hardware_pzem-004T.png)
 
 
 ## Software Stack
