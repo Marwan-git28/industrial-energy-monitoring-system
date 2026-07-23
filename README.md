@@ -9,6 +9,7 @@ The ESP32 Master securely publishes sensor data to EMQX Cloud using MQTT TLS. A 
 This project demonstrates the integration of embedded systems, industrial communication protocols, cloud services, databases, dashboards, and web APIs in a complete end-to-end Industrial IoT monitoring solution.
 
 
+
 ## Key Features
 
 - Real-time electrical energy monitoring using PZEM-004T
@@ -23,6 +24,7 @@ This project demonstrates the integration of embedded systems, industrial commun
 - End-to-end Industrial IoT monitoring system integration
 
 
+
 ## System Architecture
 
 The system consists of two ESP32 devices communicating through Modbus RTU (RS485). The ESP32 Slave collects data from the PZEM-004T energy meter, DHT22 temperature sensor, and MQ-2 gas sensor. The ESP32 Master reads the sensor data via Modbus RTU and securely publishes it to EMQX Cloud using MQTT TLS.
@@ -30,6 +32,8 @@ The system consists of two ESP32 devices communicating through Modbus RTU (RS485
 A Python Backend subscribes to the MQTT topics, processes the incoming data, stores it in InfluxDB Cloud, and provides REST API services using Flask. The collected data is visualized on a Grafana Dashboard, while ngrok exposes the REST API for external access during development and demonstration.
 
 ![System](system_architecture.png)
+
+
 
 ## Hardware Components
 
@@ -43,6 +47,8 @@ A Python Backend subscribes to the MQTT topics, processes the incoming data, sto
 | MQ-2 Gas Sensor | Detects combustible gas and smoke concentration. |
 | Breadboard & Jumper Wires | Used for hardware prototyping and wiring connections. |
 
+
+
 ### Hardware Setup
 
 #### PZEM-004T Energy Meter
@@ -50,6 +56,8 @@ A Python Backend subscribes to the MQTT topics, processes the incoming data, sto
 ![Hardware](hardware_pzem_004T.png)
 ![Hardware](hardware_dht22_mq2.png)
 ![Hardware](hardware_master_slave.png)
+
+
 
 
 ## Project Structure
@@ -68,6 +76,8 @@ Industrial-Energy-Monitoring-System/
 └── README.md
 
 
+
+
 ## Software Stack
 
 | Software / Tool | Purpose |
@@ -83,6 +93,8 @@ Industrial-Energy-Monitoring-System/
 | Git & GitHub | Version control and project documentation. |
 
 
+
+
 ### Modbus RTU Communication
 
 The ESP32 Master communicates with the ESP32 Slave using Modbus RTU (RS485). The screenshot below shows both firmware running successfully and exchanging sensor data.
@@ -92,11 +104,14 @@ The ESP32 Master communicates with the ESP32 Slave using Modbus RTU (RS485). The
 
 
 
+
 ## Python Backend
 
 The Python backend subscribes to MQTT messages, processes sensor data, stores it in InfluxDB Cloud, and provides REST API services.
 
 ![Python_flask](python_flask.png)
+
+
 
 
 ## Dashboard Preview
@@ -114,9 +129,17 @@ The Facility Dashboard visualizes environmental and equipment monitoring data, i
 ![Facility Dashboard](dashboard_facility.png)
 
 
+
+
 ## REST API
 
 The system provides REST API endpoints using Flask, allowing external applications to access real-time monitoring data. During development and testing, the API is exposed to the internet using ngrok.
+
+### REST API Preview
+
+![REST API](rest_api_ngrok.png)
+
+
 
 ### Available Features
 
@@ -125,9 +148,7 @@ The system provides REST API endpoints using Flask, allowing external applicatio
 - JSON response format
 - Easy integration with web and mobile applications
 
-### REST API Preview
 
-![REST API](rest_api_ngrok.png)
 
 ## Demo Videos
 
