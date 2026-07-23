@@ -47,7 +47,9 @@ A Python Backend subscribes to the MQTT topics, processes the incoming data, sto
 
 #### PZEM-004T Energy Meter
 
-![Hardware](hardware_pzem-004T.png)
+![Hardware](hardware_pzem_004T.png)
+![Hardware](hardware_dht22_mq2.png)
+![Hardware](hardware_master_slave.png)
 
 
 ## Software Stack
