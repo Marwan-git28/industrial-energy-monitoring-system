@@ -82,6 +82,23 @@ Industrial-Energy-Monitoring-System/
 | Postman | Tests and validates REST API endpoints. |
 | Git & GitHub | Version control and project documentation. |
 
+
+### Modbus RTU Communication
+
+The ESP32 Master communicates with the ESP32 Slave using Modbus RTU (RS485). The screenshot below shows both firmware running successfully and exchanging sensor data.
+
+![Modbus Master Slave](Modbus_RTU_rs485master_slave.png)
+![Modbus Master Slave](python_backend.png)
+
+
+
+## Python Backend
+
+The Python backend subscribes to MQTT messages, processes sensor data, stores it in InfluxDB Cloud, and provides REST API services.
+
+![Python_flask](python_flask.png)
+
+
 ## Dashboard Preview
 
 ### Energy Monitoring Dashboard
