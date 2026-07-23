@@ -184,4 +184,4 @@ Developed by Marwan Saputra as part of a personal learning journey in Industrial
 
 - GitHub: https://github.com/Marwan-git28/industrial-energy-monitoring-system/edit/main/README.md
 - LinkedIn: https://linkedin.com/in/username
-- Email: marwan.siputra@gmailcom
+- Email: projectesp32.mrwn@gmailcom
