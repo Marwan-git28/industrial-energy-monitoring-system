@@ -52,27 +52,6 @@ A Python Backend subscribes to the MQTT topics, processes the incoming data, sto
 ![Hardware](hardware_master_slave.png)
 
 
-## Software Stack
-
-| Software / Tool | Purpose |
-|-----------------|---------|
-| Arduino IDE | Develops firmware for the ESP32 Master and Slave. |
-| Python | Processes MQTT data, stores data in InfluxDB Cloud, and provides REST API services. |
-| EMQX Cloud | MQTT broker for secure data communication using MQTT TLS. |
-| InfluxDB Cloud | Stores time-series sensor data. |
-| Grafana | Visualizes real-time monitoring data through interactive dashboards. |
-| Flask | Develops REST API endpoints for external data access. |
-| ngrok | Exposes the local REST API to the internet for testing and demonstration. |
-| Postman | Tests and validates REST API endpoints. |
-| Git & GitHub | Version control and project documentation. |
-
-### Software Overview
-
-![Grafana Dashboard](images/grafana_dashboard.png)
-
-![REST API](images/rest_api.png)
-
-
 ## Project Structure
 
 Industrial-Energy-Monitoring-System/
@@ -88,62 +67,34 @@ Industrial-Energy-Monitoring-System/
 ├── requirements.txt
 └── README.md
 
-## Communication Flow
 
-1. The ESP32 Slave collects data from the PZEM-004T, DHT22, and MQ-2 sensors.
-2. The ESP32 Master reads the sensor data via Modbus RTU (RS485).
-3. The ESP32 Master publishes the data securely to EMQX Cloud using MQTT TLS.
-4. The Python Backend subscribes to the MQTT topics and processes the incoming data.
-5. The processed data is stored in InfluxDB Cloud.
-6. Grafana visualizes the sensor data in real time.
-7. Flask provides REST API endpoints for external applications.
-8. ngrok exposes the local REST API for testing and demonstration.
-9. Telegram sends notifications when predefined alert conditions are triggered.
-10. A daily email report summarizes the monitored data.
+## Software Stack
 
-Sensors
-   │
-   ▼
-ESP32 Slave
-   │
-Modbus RTU (RS485)
-   │
-   ▼
-ESP32 Master
-   │
-MQTT TLS
-   │
-   ▼
-EMQX Cloud
-   │
-   ▼
-Python Backend
-   ├──► InfluxDB Cloud
-   ├──► Grafana Dashboard
-   ├──► REST API (Flask + ngrok)
-   ├──► Telegram Alerts
-   └──► Daily Email Report
+| Software / Tool | Purpose |
+|-----------------|---------|
+| Arduino IDE | Develops firmware for the ESP32 Master and Slave. |
+| Python | Processes MQTT data, stores data in InfluxDB Cloud, and provides REST API services. |
+| EMQX Cloud | MQTT broker for secure data communication using MQTT TLS. |
+| InfluxDB Cloud | Stores time-series sensor data. |
+| Grafana | Visualizes real-time monitoring data through interactive dashboards. |
+| Flask | Develops REST API endpoints for external data access. |
+| ngrok | Exposes the local REST API to the internet for testing and demonstration. |
+| Postman | Tests and validates REST API endpoints. |
+| Git & GitHub | Version control and project documentation. |
 
 ## Dashboard Preview
 
-The Grafana Dashboard provides real-time visualization of electrical energy and environmental monitoring data collected from the Industrial IoT system.
-
-### Dashboard Features
-
-- Real-time voltage, current, power, and energy monitoring
-- Temperature and humidity visualization
-- Gas concentration monitoring
-- Historical data analysis using InfluxDB Cloud
-- Interactive time-range selection
-- Real-time dashboard updates
-
 ### Energy Monitoring Dashboard
 
-![Energy Dashboard](images/energy_dashboard.png)
+The Energy Dashboard visualizes electrical parameters collected from the PZEM-004T sensor, including voltage, current, power, energy consumption, and power factor.
 
-### Environmental Monitoring Dashboard
+![Energy Dashboard](dashboard_energy.png)
 
-![Environment Dashboard](images/environment_dashboard.png)
+### Facility Monitoring Dashboard
+
+The Facility Dashboard visualizes environmental and equipment monitoring data, including machine load, panel temperature, and gas level in real time.
+
+![Facility Dashboard](dashboard_facility.png)
 
 
 ## REST API
