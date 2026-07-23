@@ -127,7 +127,7 @@ The system provides REST API endpoints using Flask, allowing external applicatio
 
 ### REST API Preview
 
-![REST API](images/rest_api.png)
+![REST API](rest_api_ngrok.png)
 
 ## Demo Videos
 
