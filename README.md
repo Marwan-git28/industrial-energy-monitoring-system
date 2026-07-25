@@ -182,6 +182,6 @@ https://drive.google.com/file/d/1Nye10JATb9Z6uk4P_x2Sgemz22344_IG/view?usp=drive
 
 Developed by Marwan Saputra as part of a personal learning journey in Industrial IoT, Embedded Systems, and Industrial Automation.
 
-- GitHub: https://github.com/Marwan-git28/industrial-energy-monitoring-system/edit/main/README.md
-- LinkedIn: https://linkedin.com/in/username
-- Email: projectesp32.mrwn@gmailcom
+- GitHub: https://github.com/Marwan-git28/industrial-iot-portfolio
+- LinkedIn: https://www.linkedin.com/in/marwan-saputra-972242415/
+- Email: (projectesp32.mrwn@gmailcom) (marwan.siputra@gmail.com)
